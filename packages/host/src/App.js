@@ -1,8 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
+
+const AppFirst = React.lazy(() => import("app1/AppFirst"));
 
 const App = () => {
   return (
-    <h1>Host App!</h1>
+    <div>
+      <h1>Host App!</h1>
+      <Suspense fallback={"loading..."}>
+            <AppFirst />
+      </Suspense>
+    </div>
   )
 }
 

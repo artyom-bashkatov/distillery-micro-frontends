@@ -3,7 +3,14 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start": "npx lerna run start --parallel"
+    "stop": "npx kill-port --port 3000,3001",
+    "start": "npx kill-port --port 3000,3001 && npx lerna run start --parallel",
+    "build": "npx kill-port --port 3000,3001 && npx lerna run build --parallel"
   },
-  "name": "distillery-micro-frontends"
+  "name": "distillery-micro-frontends",
+  "dependencies": {
+    "add": "^2.0.6",
+    "kill-port": "^1.6.1",
+    "yarn": "^1.22.11"
+  }
 }
